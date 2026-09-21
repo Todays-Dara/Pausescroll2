@@ -5,7 +5,7 @@
    fallback, and an "Update available, Reload" toast flow.
    ============================================================ */
 
-const VERSION = "1.0.1";
+const VERSION = "1.0.2";
 const CACHE = "pausescroll-" + VERSION;
 
 const PRECACHE_URLS = [
@@ -17,6 +17,7 @@ const PRECACHE_URLS = [
   "landing.js",
   "app.js",
   "manifest.webmanifest",
+  "manifest.json",
   "icons/icon-192.png",
   "icons/icon-512.png",
   "icons/icon-maskable-512.png",
