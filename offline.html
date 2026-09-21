@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Offline — PauseScroll</title>
+  <style>
+    :root { --accent: #1e8f74; --text: #16211d; --muted: #58675f; --bg: #f7f8f5; }
+    [data-theme="dark"] { --accent: #43c2a0; --text: #e7efe9; --muted: #93a49b; --bg: #0e1512; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      text-align: center;
+    }
+    .card {
+      max-width: 360px;
+      background: var(--bg);
+      border: 1px solid rgba(127,127,127,0.18);
+      border-radius: 24px;
+      padding: 40px 28px;
+      box-shadow: 0 10px 30px -10px rgba(0,0,0,0.15);
+    }
+    .ring {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      border: 4px solid var(--accent);
+      position: relative;
+    }
+    .ring::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 14px;
+      height: 14px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    h1 { font-size: 22px; letter-spacing: -0.02em; margin: 0 0 10px; }
+    p { color: var(--muted); font-size: 15px; margin: 0 0 24px; }
+    button {
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+      background: var(--accent);
+      border: none;
+      border-radius: 999px;
+      min-height: 48px;
+      padding: 12px 26px;
+      cursor: pointer;
+    }
+    button:hover { filter: brightness(1.08); }
+  </style>
+</head>
+<body>
+  <div class="card" role="main">
+    <div class="ring" aria-hidden="true"></div>
+    <h1>You've paused your scroll offline</h1>
+    <p>This page was reached without a connection. The PauseScroll app itself works fully offline — go back and keep going.</p>
+    <button type="button" onclick="location.reload()">Try again</button>
+  </div>
+  <script>
+    try {
+      document.documentElement.setAttribute("data-theme", localStorage.getItem("ps_theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+    } catch (e) {}
+  </script>
+</body>
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="PauseScroll — a gentle timer that helps you stop doomscrolling and get your evenings back.">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f8f5">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0e1512">
+  <meta name="color-scheme" content="light dark">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="PauseScroll">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <title>PauseScroll — Stop doomscrolling, get your evenings back</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="landing.js" type="module"></script>
+</head>
+<body>
+
+  <a class="visually-hidden-focusable" href="#main">Skip to content</a>
+
+  <!-- ============ 1. Header ============ -->
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="PauseScroll home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        PauseScroll
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#how-it-works">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="header-actions">
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+          </svg>
+        </button>
+        <button type="button" class="btn btn-primary" id="install-btn-header">Install app</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ 2. Hero ============ -->
+    <section class="section hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">A gentle timer for your feeds</p>
+          <h1 id="hero-title">Your phone shouldn't <span class="accent-word">steal your night.</span></h1>
+          <p class="sub">PauseScroll sets a clear, quiet timer on your scrolling. When the time is up, it nudges you once, then gently closes the feed — so you can sleep on your schedule, not the algorithm's.</p>
+          <div class="hero-actions">
+            <button type="button" class="btn btn-primary" id="install-btn-hero">Install app</button>
+            <a class="btn btn-ghost" href="#how-it-works">See how it works</a>
+          </div>
+          <div class="trust-chips" role="list">
+            <span class="chip" role="listitem">Free</span>
+            <span class="chip" role="listitem">Private by design</span>
+            <span class="chip" role="listitem">Works offline</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="phone-mockup" aria-hidden="true">
+            <div class="phone-screen">
+              <p class="phone-label">Evening scroll</p>
+              <div class="ring-wrap">
+                <svg class="ring" width="172" height="172" viewBox="0 0 200 200">
+                  <circle class="track" cx="100" cy="100" r="88" fill="none" stroke-width="10"/>
+                  <circle class="progress" cx="100" cy="100" r="88" fill="none" stroke-width="10"
+                    stroke-dasharray="552.92" stroke-dashoffset="220" stroke="none"/>
+                </svg>
+                <div class="ring-label">
+                  <span class="time">06:40</span>
+                  <span class="hint">before wind-down</span>
+                </div>
+              </div>
+              <p class="phone-note">Just one more… is exactly what we're here for.</p>
+              <div class="phone-bars" aria-hidden="true">
+                <i></i><i></i><i></i>
+              </div>
+            </div>
+          </div>
+          <p class="mockup-caption">A quiet countdown — no doom spiral attached.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3. The problem ============ -->
+    <section class="section" aria-labelledby="problem-title">
+      <div class="container">
+        <div class="section-head center">
+          <p class="eyebrow">Why it matters</p>
+          <h2 class="section-title" id="problem-title">The feed rarely ends. Your evening shouldn't too.</h2>
+          <p class="section-sub">These are illustrative figures for the kind of scenario PauseScroll addresses — not sourced claims.</p>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <p class="stat-num"><span data-count="120" aria-hidden="true">0</span><span class="suffix"> min</span><span class="visually-hidden">about 120 minutes</span></p>
+            <p>(illustrative) of evening scrolling many people report on social apps before sleep.</p>
+          </div>
+          <div class="stat-card">
+            <p class="stat-num"><span data-count="63" aria-hidden="true">0</span><span class="suffix"> %</span><span class="visually-hidden">about 63 percent</span></p>
+            <p>(illustrative) of that scrolling happens after dark, in a single "quick check".</p>
+          </div>
+          <div class="stat-card">
+            <p class="stat-num"><span data-count="37" aria-hidden="true">0</span><span class="suffix"> min</span><span class="visually-hidden">about 37 minutes</span></p>
+            <p>(illustrative) returned to your night by setting one clear limit before you open the app.</p>
+          </div>
+        </div>
+        <p class="stat-note">Illustrative scenario figures. No tracking, no claims, no numbers harvested from anyone.</p>
+      </div>
+    </section>
+
+    <!-- ============ 4. How it works ============ -->
+    <section class="section" id="how-it-works" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section-head center">
+          <p class="eyebrow">How it works</p>
+          <h2 class="section-title" id="how-title">Three quiet steps</h2>
+          <p class="section-sub">No account, no setup ceremony. Set an intent, get one gentle nudge, done.</p>
+        </div>
+        <div class="steps-grid">
+          <article class="step-card">
+            <h3>Set your intent</h3>
+            <p>Type one line — "quick scroll, funny posts", "today's news". Then pick an app and how many minutes feel honest.</p>
+            <div class="step-mock">
+              <span class="l">Intent</span>
+              Quick scroll, funny posts
+              <span class="mini-bar"><span style="width:0%"></span></span>
+            </div>
+          </article>
+          <article class="step-card">
+            <h3>Get a gentle nudge at 80%</h3>
+            <p>When 20% remains, PauseScroll asks "Still valuable?" — a beat to decide before autopilot does.</p>
+            <div class="step-mock">
+              <span class="l">Still valuable?</span>
+              <span class="mini-bar"><span style="width:80%"></span></span>
+            </div>
+          </article>
+          <article class="step-card">
+            <h3>Auto-pause at your limit</h3>
+            <p>At zero the session pauses and softens. Take a breather, or snooze a little — never more than a few times a day.</p>
+            <div class="step-mock">
+              <span class="l">Paused</span>
+              Breathe in. Out.
+              <span class="mini-bar"><span style="width:100%"></span></span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5. Features ============ -->
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="container">
+        <div class="section-head center">
+          <p class="eyebrow">Features</p>
+          <h2 class="section-title" id="features-title">Everything you need to reclaim the scroll</h2>
+          <p class="section-sub">Small, calm controls that respect you more than the algorithm does.</p>
+        </div>
+        <div class="features-grid">
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 2v4M16 2v4"/></svg>
+            </span>
+            <h3>Per-app limits</h3>
+            <p>Set a daily budget for Instagram, TikTok, X and more. Each app gets its own honest envelope.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            </span>
+            <h3>Smart nudge</h3>
+            <p>One question at 80% — "Still valuable?" — timed to your own intent, not to a streak counter.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 9v6M14 9v6"/></svg>
+            </span>
+            <h3>Auto-pause</h3>
+            <p>When your limit hits, the session stops. Not aggressively — just enough to break the loop.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </span>
+            <h3>Quiet hours</h3>
+            <p>Pick a window — say 22:00–06:00. Sessions started then are dimmed and softer-lit.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3c1 3-3 4-3 7a3 3 0 0 0 6 0c0-1-.5-2-1-3 2 1 4 3 4 6a6 6 0 0 1-12 0c0-4 3-7 6-10z"/></svg>
+            </span>
+            <h3>Streaks</h3>
+            <p>Not a guilt machine. Just a small yes — days where you ended a session deliberately, rather than at zero.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+            </span>
+            <h3>On-device privacy</h3>
+            <p>Everything lives in your browser's storage. No servers, no accounts, no analytics, no ads.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 6. Live demo ============ -->
+    <section class="section" id="live-demo" aria-labelledby="demo-title">
+      <div class="container">
+        <div class="section-head center">
+          <p class="eyebrow">Live demo</p>
+          <h2 class="section-title" id="demo-title">See a session play out</h2>
+          <p class="section-sub">Press play to watch a 10-minute scroll hit its 80% nudge and its end.</p>
+        </div>
+        <div class="demo">
+          <div class="demo-stage">
+            <p class="demo-status" id="demo-status" role="status" aria-live="polite">Ready when you are.</p>
+            <div class="phone-mockup" aria-hidden="true">
+              <div class="phone-screen">
+                <p class="phone-label" id="demo-label">Session</p>
+                <div class="ring-wrap small">
+                  <svg class="ring" id="demo-ring-svg" width="120" height="120" viewBox="0 0 200 200">
+                    <circle class="track" cx="100" cy="100" r="88" fill="none" stroke-width="10"/>
+                    <circle class="progress" id="demo-ring" cx="100" cy="100" r="88" fill="none" stroke-width="10"
+                      stroke-dasharray="552.92" stroke-dashoffset="0"/>
+                  </svg>
+                  <div class="ring-label">
+                    <span class="time" id="demo-time">10:00</span>
+                    <span class="hint" id="demo-hint">set</span>
+                  </div>
+                </div>
+                <div class="nudge" id="demo-nudge" hidden>
+                  <p>Still valuable?</p>
+                  <div class="nudge-actions">
+                    <span class="btn btn-ghost" style="pointer-events:none; min-height:36px; padding:6px 12px; font-size:13px;">I'm good</span>
+                    <span class="btn btn-primary" style="pointer-events:none; min-height:36px; padding:6px 12px; font-size:13px;">One more minute</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="demo-controls">
+              <button type="button" class="btn btn-primary btn-mini" id="demo-toggle">Play</button>
+              <button type="button" class="btn btn-ghost btn-mini" id="demo-step">Next step</button>
+              <button type="button" class="btn btn-quiet btn-mini" id="demo-reset">Reset</button>
+            </div>
+            <ul class="demo-steps" id="demo-steps" aria-hidden="true">
+              <li id="demo-step-set">1 · Set intent</li>
+              <li id="demo-step-run">2 · Running</li>
+              <li id="demo-step-nudge">3 · 80% nudge</li>
+              <li id="demo-step-end">4 · Time's up</li>
+            </ul>
+          </div>
+          <div class="demo-script">
+            <div class="demo-line"><span class="n">1</span><p>Pick an app and a minute budget — 5, 10, 15, 30, 60, or your own number.</p></div>
+            <div class="demo-line"><span class="n">2</span><p>Your intent is written at the top: "Quick scroll, funny posts". The ring starts draining.</p></div>
+            <div class="demo-line"><span class="n">3</span><p>At 80% consumed, one gentle question. Answer honestly — nobody's watching.</p></div>
+            <div class="demo-line"><span class="n">4</span><p>At zero the session closes with a 10-second breathing pause. Snooze? Max three times a day.</p></div>
+            <div class="demo-nudge-bubble">Everything here runs in your browser. No data leaves the device.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 7. Get the app ============ -->
+    <section class="section getapp" id="get-app" aria-labelledby="getapp-title">
+      <div class="container">
+        <div class="section-head center">
+          <p class="eyebrow">Get the app</p>
+          <h2 class="section-title" id="getapp-title">Install PauseScroll</h2>
+          <p class="section-sub">Runs as a standalone app right from your browser — no store required.</p>
+        </div>
+        <div class="getapp-grid">
+          <article class="getapp-card">
+            <h3>Browser install</h3>
+            <p>One tap installs the app on Android Chrome, and on desktop Chrome or Edge. It works fully offline.</p>
+            <button type="button" class="btn btn-primary" id="install-btn-getapp">Install app</button>
+            <p class="apk-note" id="installed-note" hidden>PauseScroll is installed on this device.</p>
+          </article>
+          <article class="getapp-card">
+            <h3>iPhone &amp; iPad</h3>
+            <p>iOS lets you add any site to your home screen. It behaves like a real app — full screen, offline, own icon.</p>
+            <div class="ios-visual">
+              <span class="ios-icon" aria-hidden="true"></span>
+              <span>Tap <strong>Share</strong>, then <strong>Add to Home Screen</strong>.</span>
+            </div>
+          </article>
+          <article class="getapp-card">
+            <h3>Android APK</h3>
+            <p>System-wide limits on other apps need the native APK. The browser app runs its timer just inside PauseScroll.</p>
+            <button type="button" class="btn btn-ghost" id="apk-btn">Download Android APK</button>
+            <p class="apk-note" id="apk-note" hidden>APK coming soon — install from your browser above.</p>
+          </article>
+        </div>
+        <p class="getapp-note">An honest note: system-wide blocking of other apps requires the Android APK. The web version runs its timer inside the app.</p>
+      </div>
+    </section>
+
+    <!-- ============ 8. FAQ ============ -->
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-head center">
+          <p class="eyebrow">FAQ</p>
+          <h2 class="section-title" id="faq-title">Questions, answered honestly</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>What does PauseScroll actually track about me?</summary>
+            <div class="faq-body">
+              Nothing leaves your device. Your intent text, limits, quiet hours and counters are stored only in your
+              browser's local storage — and only used to render the app for you. There are no accounts, no analytics,
+              no advertising identifiers.
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Does it block other apps?</summary>
+            <div class="faq-body">
+              Not in the browser version — a web page cannot stop other apps from opening. PauseScroll runs its own
+              timer inside the app and can only pause <em>itself</em>. System-wide blocking of other apps is planned
+              for the Android APK, which can request accessibility permissions to close apps at your limit.
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Will it drain my battery?</summary>
+            <div class="faq-body">
+              No. The timer stores an end timestamp and only wakes a few times per second while a session is running to
+              redraw the ring. With no session active, nothing runs in the background at all.
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Which platforms work?</summary>
+            <div class="faq-body">
+              The web app works in any modern browser — Chrome, Edge, Firefox, Safari — on desktop and mobile. Installing
+              as a standalone PWA works best on Android Chrome and desktop Chrome/Edge. iPhones and iPads install via
+              Share &rarr; Add to Home Screen.
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>How much does it cost?</summary>
+            <div class="faq-body">
+              It's free. No trials, no subscriptions, no ads, no data for sale. It's a single calm page that works
+              offline, and we'd like to keep it that way.
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Where is my data stored?</summary>
+            <div class="faq-body">
+              In this browser, on this device, in localStorage. Export (a JSON file you download) and reset are
+              available in Settings, and clearing your browser storage deletes everything.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ 9. Footer: Privacy & Terms ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="legal-sections" style="text-align:left; margin-bottom:34px;">
+        <section>
+          <h3>Privacy</h3>
+          <p>PauseScroll is a local, offline-first app. All data — your intents, limits, settings and counters — stays
+          in your device's browser storage. We operate no server, keep no logs, and include no tracking scripts,
+          analytics, or third-party requests of any kind.</p>
+          <p>Because your information never leaves your device, we have nothing to share, sell, or lose.</p>
+        </section>
+        <section>
+          <h3>Terms</h3>
+          <p>PauseScroll is provided as-is, for free, to help you use your time more deliberately. It is a tool for
+          gentle self-limits, not a medical device and not a promise to change your habits.</p>
+          <p>The Android APK may request accessibility services so it can close other apps at your set limit. You grant
+          that permission yourself, and the app only uses it while you're actively in a session.</p>
+        </section>
+      </div>
+      <div class="footer-links">
+        <a href="app.html">Open the app</a>
+        <a href="#faq">FAQ</a>
+        <a href="#get-app">Get the app</a>
+      </div>
+      <p>PauseScroll &mdash; all data stays on-device. No tracking.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
